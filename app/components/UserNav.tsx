@@ -17,11 +17,9 @@ import Link from "next/link";
 import { createAirbnbHome } from "../actions";
 
 export async function UserNav() {
-  const { getUser } = getKindeServerSession();
-  const user = await getUser();
 
   const createHomewithId = createAirbnbHome.bind(null, {
-    userId: user?.id as string,
+    userId: '1' as string,
   });
 
   return (
@@ -32,7 +30,7 @@ export async function UserNav() {
 
           <img
             src={
-              user?.picture ??
+ 
               "https://static.vecteezy.com/system/resources/thumbnails/009/292/244/small/default-avatar-icon-of-social-media-user-vector.jpg"
             }
             alt="Image of the user"
@@ -41,7 +39,7 @@ export async function UserNav() {
         </div>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-[200px]">
-        {user ? (
+        {true ? (
           <>
             <DropdownMenuItem>
               <form action={createHomewithId} className="w-full">

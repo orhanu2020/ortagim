@@ -33,10 +33,8 @@ async function getData(userId: string) {
 }
 
 export default async function ReservationsRoute() {
-  const { getUser } = getKindeServerSession();
-  const user = await getUser();
-  if (!user?.id) return redirect("/");
-  const data = await getData(user.id);
+
+  const data = await getData('1');
   return (
     <section className="container mx-atuo px-5 lg:px-10 mt-10">
       <h2 className="text-3xl font-semibold tracking-tight">
@@ -59,7 +57,7 @@ export default async function ReservationsRoute() {
               homeId={item.Home?.id as string}
               imagePath={item.Home?.photo as string}
               price={item.Home?.price as number}
-              userId={user.id}
+              userId={'1'}
               favoriteId={item.Home?.Favorite[0]?.id as string}
               isInFavoriteList={
                 (item.Home?.Favorite.length as number) > 0 ? true : false

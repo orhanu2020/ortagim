@@ -35,13 +35,8 @@ async function getData(userId: string) {
 }
 
 export default async function MyHomes() {
-  const { getUser } = getKindeServerSession();
-  const user = await getUser();
 
-  if (!user) {
-    return redirect("/");
-  }
-  const data = await getData(user.id);
+  const data = await getData('1');
   return (
     <section className="container mx-auto px-5 lg:px-10 mt-10">
       <h2 className="text-3xl font-semibold tracking-tight">Your Homes</h2>
@@ -61,7 +56,7 @@ export default async function MyHomes() {
               price={item.price as number}
               description={item.description as string}
               location={item.country as string}
-              userId={user.id}
+              userId={'1'}
               pathName="/my-homes"
               favoriteId={item.Favorite[0]?.id}
               isInFavoriteList={item.Favorite.length > 0 ? true : false}

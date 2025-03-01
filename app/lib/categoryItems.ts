@@ -9,106 +9,242 @@ interface iAppProps {
 export const categoryItems: iAppProps[] = [
   {
     id: 0,
-    name: "beach",
-    description: "This Property is close to the Beach.",
-    title: "Beach",
+    name: "1",
+    description: "1",
+    title: "1",
     imageUrl:
-      "https://a0.muscache.com/pictures/10ce1091-c854-40f3-a2fb-defc2995bcaf.jpg",
+      "/1.png",
   },
   {
     id: 1,
-    name: "trending",
-    description: "This is a Property which is trending.",
-    title: "Trending",
+    name: "2",
+    description: "2",
+    title: "2",
     imageUrl:
-      "https://a0.muscache.com/pictures/3726d94b-534a-42b8-bca0-a0304d912260.jpg",
+      "/2.png",
   },
   {
     id: 2,
-    name: "beachfront",
-    description: "This is a Property is close to the beachfront",
-    title: "Beachfront",
+    name: "3",
+    description: "3",
+    title: "3",
     imageUrl:
-      "https://a0.muscache.com/pictures/bcd1adc0-5cee-4d7a-85ec-f6730b0f8d0c.jpg",
+      "/3.png",
   },
   {
     id: 3,
-    name: "erathhome",
-    description: "This Property is considerd a Earth Home",
-    title: "Earth Home",
+    name: "4",
+    description: "4",
+    title: "4",
     imageUrl:
-      "https://a0.muscache.com/pictures/d7445031-62c4-46d0-91c3-4f29f9790f7a.jpg",
+     "/4.png",
   },
   {
     id: 4,
-    name: "luxe",
-    description: "This Property is considerd Luxorious",
-    title: "Luxe",
+    name: "5",
+    description: "5",
+    title: "5",
     imageUrl:
-      "https://a0.muscache.com/pictures/c8e2ed05-c666-47b6-99fc-4cb6edcde6b4.jpg",
+      "/5.png",
   },
   {
     id: 5,
-    name: "amazingView",
-    description: "This property has an amazing View",
-    title: "Amazing View",
+    name: "6",
+    description: "6",
+    title: "6",
     imageUrl:
-      "https://a0.muscache.com/pictures/3b1eb541-46d9-4bef-abc4-c37d77e3c21b.jpg",
+      "/6.png",
   },
   {
     id: 6,
-    name: "design",
-    description: "This property puts a big focus on design ",
-    title: "Design",
+    name: "7",
+    description: "7",
+    title: "7",
     imageUrl:
-      "https://a0.muscache.com/pictures/50861fca-582c-4bcc-89d3-857fb7ca6528.jpg",
+      "/7.png",
   },
   {
     id: 7,
-    name: "pool",
-    description: "This property has an amazing Pool",
-    title: "Pool",
+    name: "8",
+    description: "8",
+    title: "8",
     imageUrl:
-      "https://a0.muscache.com/pictures/3fb523a0-b622-4368-8142-b5e03df7549b.jpg",
+      "/1.png",
   },
-  {
+    {
     id: 8,
-    name: "tiny",
-    description: "This property is considered a tiny home",
-    title: "Tiny Home",
+    name: "9",
+    description: "9",
+    title: "9",
     imageUrl:
-      "https://a0.muscache.com/pictures/3271df99-f071-4ecf-9128-eb2d2b1f50f0.jpg",
+      "/2.png",
   },
   {
     id: 9,
-    name: "historic",
-    description: "This Property is considered historic",
-    title: "Historic Home",
+    name: "10",
+    description: "10",
+    title: "10",
     imageUrl:
-      "https://a0.muscache.com/pictures/33dd714a-7b4a-4654-aaf0-f58ea887a688.jpg",
+      "/3.png",
   },
   {
     id: 10,
-    name: "countryside",
-    description: "This Property is located on the countryside",
-    title: "Countryside",
+    name: "11",
+    description: "11",
+    title: "11",
     imageUrl:
-      "https://a0.muscache.com/pictures/6ad4bd95-f086-437d-97e3-14d12155ddfe.jpg",
+     "/4.png",
   },
   {
     id: 11,
-    name: "omg",
-    description: "This Property has a wow factor",
-    title: "WOW!",
+    name: "12",
+    description: "12",
+    title: "12",
     imageUrl:
-      "https://a0.muscache.com/pictures/c5a4f6fc-c92c-4ae8-87dd-57f1ff1b89a6.jpg",
+      "/5.png",
   },
   {
     id: 12,
-    name: "surfing",
-    description: "This Property is located near to a surfing spot",
-    title: "Surfing",
+    name: "13",
+    description: "13",
+    title: "13",
     imageUrl:
-      "https://a0.muscache.com/pictures/957f8022-dfd7-426c-99fd-77ed792f6d7a.jpg",
+      "/6.png",
+  },
+  {
+    id: 13,
+    name: "14",
+    description: "14",
+    title: "14",
+    imageUrl:
+      "/7.png",
+  },
+  {
+    id: 14,
+    name: "15",
+    description: "15",
+    title: "15",
+    imageUrl:
+      "/1.png",
+  },
+    {
+    id: 15,
+    name: "16",
+    description: "16",
+    title: "16",
+    imageUrl:
+      "/2.png",
+  },
+  {
+    id: 16,
+    name: "17",
+    description: "17",
+    title: "17",
+    imageUrl:
+      "/3.png",
+  },
+  {
+    id: 17,
+    name: "18",
+    description: "18",
+    title: "18",
+    imageUrl:
+     "/4.png",
+  },
+  {
+    id: 18,
+    name: "19",
+    description: "19",
+    title: "19",
+    imageUrl:
+      "/5.png",
+  },
+  {
+    id: 19,
+    name: "20",
+    description: "20",
+    title: "20",
+    imageUrl:
+      "/6.png",
+  },
+  {
+    id: 20,
+    name: "21",
+    description: "21",
+    title: "21",
+    imageUrl:
+      "/7.png",
+  },
+  {
+    id: 21,
+    name: "22",
+    description: "22",
+    title: "22",
+    imageUrl:
+      "/1.png",
+  },
+    {
+    id: 22,
+    name: "23",
+    description: "23",
+    title: "23",
+    imageUrl:
+      "/2.png",
+  },
+  {
+    id: 23,
+    name: "24",
+    description: "24",
+    title: "24",
+    imageUrl:
+      "/3.png",
+  },
+  {
+    id: 24,
+    name: "25",
+    description: "25",
+    title: "25",
+    imageUrl:
+     "/4.png",
+  },
+  {
+    id: 25,
+    name: "26",
+    description: "26",
+    title: "26",
+    imageUrl:
+      "/5.png",
+  },
+  {
+    id: 26,
+    name: "27",
+    description: "27",
+    title: "27",
+    imageUrl:
+      "/6.png",
+  },
+  {
+    id: 27,
+    name: "28",
+    description: "28",
+    title: "28",
+    imageUrl:
+      "/7.png",
+  },
+  {
+    id: 28,
+    name: "29",
+    description: "29",
+    title: "29",
+    imageUrl:
+      "/1.png",
+  },
+    {
+    id: 29,
+    name: "30",
+    description: "30",
+    title: "30",
+    imageUrl:
+      "/2.png",
   },
 ];

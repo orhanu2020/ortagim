@@ -32,15 +32,16 @@ export function ListingCard({
 
   return (
     <div className="flex flex-col">
-      <div className="relative h-72">
+      <div className="relative h-96">
         <Image
-          src={`https://glvmmupiqwlmhicmggqp.supabase.co/storage/v1/object/public/images/${imagePath}`}
+          src={imagePath? imagePath:''}
           alt="Image of House"
           fill
-          className="rounded-lg h-full object-cover"
+          className="rounded-s-sm h-full object-cover"
         />
 
-        {userId && (
+        {
+        userId && (
           <div className="z-10 absolute top-2 right-2">
             {isInFavoriteList ? (
               <form action={DeleteFromFavorite}>
@@ -56,22 +57,16 @@ export function ListingCard({
                 <input type="hidden" name="pathName" value={pathName} />
                 <AddToFavoriteButton />
               </form>
-            )}
+            )
+            }
           </div>
         )}
+        
       </div>
 
-      <Link href={`/home/${homeId}`} className="mt-2">
-        <h3 className="font-medium text-base">
-          {country?.flag} {country?.label} / {country?.region}
-        </h3>
-        <p className="text-muted-foreground text-sm line-clamp-2">
+      <p className="text-muted-foreground text-sm line-clamp-2">
           {description}
         </p>
-        <p className="pt-2 text-muted-foreground">
-          <span className="font-medium text-black">${price}</span> Night
-        </p>
-      </Link>
     </div>
   );
 }

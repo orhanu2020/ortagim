@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Heart, Loader2 } from "lucide-react";
+import { Bookmark, Heart, Loader2 } from "lucide-react";
 import { useFormStatus } from "react-dom";
 
 export function CreationSubmit() {
@@ -42,7 +42,7 @@ export function AddToFavoriteButton() {
           className="bg-primary-foreground"
           type="submit"
         >
-          <Heart className="w-4 h-4" />
+          <Bookmark className="w-4 h-4" />
         </Button>
       )}
     </>
@@ -69,7 +69,7 @@ export function DeleteFromFavoriteButton() {
           className="bg-primary-foreground"
           type="submit"
         >
-          <Heart className="w-4 h-4 text-primary" fill="#E21C49" />
+          <Bookmark className="w-4 h-4 text-primary" fill="#E21C49" />
         </Button>
       )}
     </>

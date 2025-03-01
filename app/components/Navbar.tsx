@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import DesktopLogo from "../../public/airbnb-desktop.png";
-import MobileLogo from "../../public/airbnb-mobile.webp";
+import DesktopLogo from "../../public/logo.png";
+import MobileLogo from "../../public/logo.png";
 import { UserNav } from "./UserNav";
 import { SearchModalCompnent } from "./SearchComponent";
 
@@ -23,9 +23,9 @@ export function Navbar() {
           />
         </Link>
 
-        <SearchModalCompnent />
+        {/* <SearchModalCompnent /> */}
 
-        <UserNav />
+        {/* <UserNav /> */}
       </div>
     </nav>
   );
