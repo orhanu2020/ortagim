@@ -25,7 +25,7 @@ export function MapFilterItems() {
   );
 
   return (
-    <ScrollArea className="w-max whitespace-nowrap rounded-md border">
+    <ScrollArea className="whitespace-nowrap rounded-md border grid-cols-4">
       <div className="flex w-max space-x-4 p-4">
         {categoryItems.map((item) => (
           <Link
