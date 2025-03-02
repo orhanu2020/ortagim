@@ -16,7 +16,7 @@
 // import dynamic from "next/dynamic";
 // import { useState } from "react";
 
-// export default function AddressRoutw({ params }: { params: { id: string } }) {
+ export default function AddressRoutw({ params }: { params: { id: string } }) {
 //   const { getAllCountries } = useCountries();
 //   const [locationValue, setLocationValue] = useState("");
 
@@ -61,4 +61,4 @@
 //       </form>
 //     </>
 //   );
-// }
+ }
