@@ -20,7 +20,7 @@ export async function GET() {
         lastName: "",
         id: '1',
         profileImage:
-          `https://avatar.vercel.sh/${user.given_name}`,
+          '',
       },
     });
   }

@@ -3,7 +3,7 @@ import Link from "next/link";
 import DesktopLogo from "../../public/logo.png";
 import MobileLogo from "../../public/logo.png";
 import { UserNav } from "./UserNav";
-import { SearchModalCompnent } from "./SearchComponent";
+
 
 export function Navbar() {
   return (
