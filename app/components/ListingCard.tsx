@@ -32,7 +32,7 @@ export function ListingCard({
 
   return (
     <div className="flex flex-col">
-      <div className="relative h-96">
+      <div className="relative lg:h-96 sm:h-72">
         <Image
           src={imagePath? imagePath:''}
           alt="Image of House"
