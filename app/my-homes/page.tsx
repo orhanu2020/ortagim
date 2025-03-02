@@ -43,7 +43,7 @@ export default async function MyHomes() {
 
       {data.length === 0 ? (
         <NoItems
-          description="Please list a hoeme on airbnb so that you can see it right here"
+          description="Please list so that you can see it right here"
           title="Your dont have any Homes listed"
         />
       ) : (
