@@ -6,9 +6,8 @@ generator client {
 }
 
 datasource db {
-  provider  = "postgresql"
-  url       = env("DATABASE_URL")
-  directUrl = env("DIRECT_URL")
+  provider = "sqlite"
+  url      = "file:./dev.db" // Path to your SQLite database file
 }
 
 model User {
@@ -37,6 +36,7 @@ model Home {
   categoryName String?
   Favorite     Favorite[]
   Reservation  Reservation[]
+  Neighborhood   Neighborhood[]
 
   addedCategory    Boolean @default(false)
   addedDescription Boolean @default(false)
@@ -69,4 +69,13 @@ model Reservation {
   userId String?
   Home   Home?   @relation(fields: [homeId], references: [id])
   homeId String?
+}
+
+model Neighborhood {
+  id String @id @default(uuid())
+
+  name        String
+  description String
+  createdAt   DateTime @default(now())
+  Home         Home[]
 }

@@ -7,7 +7,6 @@ import { NoItems } from "./components/NoItem";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { ListingCard } from "./components/ListingCard";
 import { unstable_noStore as noStore } from "next/cache";
-import { UserNav } from "./components/UserNav";
 
 async function getData({
   searchParams,
@@ -30,6 +29,7 @@ async function getData({
       guests: searchParams?.guest ?? undefined,
       bedrooms: searchParams?.room ?? undefined,
       bathrooms: searchParams?.bathroom ?? undefined,
+      userId: userId ?? undefined,
     },
     select: {
       photo: true,
@@ -44,7 +44,7 @@ async function getData({
       },
     },
     orderBy: {
-      createdAT: 'asc',
+      createdAT: "asc",
     },
   });
 
@@ -60,8 +60,10 @@ export default function Home({
     guest?: string;
     room?: string;
     bathroom?: string;
+    userId?: string;
   };
 }) {
+  //console.log(searchParams);
   return (
     <div className="container mx-auto px-5 lg:px-10">
       {/* <UserNav /> */}
@@ -83,17 +85,18 @@ async function ShowItems({
     guest?: string;
     room?: string;
     bathroom?: string;
+    userId?: string;
   };
 }) {
-  const data = await getData({ searchParams: searchParams, userId: '1' });
-
+  const data = await getData({
+    searchParams: searchParams,
+    userId: searchParams?.userId,
+  });
+  console.log("User Id: " + searchParams?.userId);
   return (
     <>
-      {data.length === 0 ? (
-        <NoItems
-          description="..."
-          title="Eklenmedi"
-        />
+      {data.length === 0 || searchParams?.userId === undefined ? (
+        <NoItems description="..." title="Grup Secimi ya da sayfalar eksik" />
       ) : (
         <div className="grid lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-8">
           {data.map((item) => (
@@ -103,7 +106,7 @@ async function ShowItems({
               imagePath={item.photo as string}
               location={item.country as string}
               price={item.price as number}
-              userId={'1'}
+              userId={searchParams?.userId}
               favoriteId={item.Favorite[0]?.id}
               isInFavoriteList={item.Favorite.length > 0 ? true : false}
               homeId={item.id}

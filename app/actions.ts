@@ -4,7 +4,6 @@ import { redirect } from "next/navigation";
 import prisma from "./lib/db";
 import { supabase } from "./lib/supabase";
 import { revalidatePath } from "next/cache";
-import path from "path";
 
 export async function createAirbnbHome({ userId }: { userId: string }) {
   const data = await prisma.home.findFirst({
@@ -168,4 +167,83 @@ export async function createReservation(formData: FormData) {
   });
 
   return redirect("/");
+}
+
+export async function createGroup(formData: FormData) {
+  let dbUser = await prisma.user.findUnique({
+    where: {
+      id: formData.get("id") as string,
+    },
+  });
+
+  if (!dbUser) {
+    await prisma.user.create({
+      data: {
+        email: "",
+        firstName: formData.get("id") as string,
+        lastName: formData.get("id") as string,
+        id: formData.get("id") as string,
+        profileImage: "",
+      },
+    });
+
+    await prisma.home.create({
+      data: {
+        userId: formData.get("id") as string,
+        categoryName: "1",
+        photo: "/Kuran/Cüz_01/000.jpg",
+      },
+    });
+    let pageCount: number = 0; // Initialize pageCount to 0
+    for (let i = 1; i <= 30; i++) {
+      // Start from 1 for Cüz_1
+      for (let j = 1; j <= 20; j++) {
+        // Start from 1 for 001.jpg
+        pageCount++; // Increment pageCount for each image
+        const juzNumber = i.toString().padStart(2, "0"); // Pad Cüz number
+        const imageNumber = pageCount.toString().padStart(3, "0"); // Pad image number
+
+        await prisma.home.create({
+          data: {
+            userId: formData.get("id") as string,
+            photo: `/Kuran/Cüz_${juzNumber}/${imageNumber}.png`,
+            categoryName: i.toString(),
+          },
+        });
+      }
+    }
+    await prisma.home.create({
+      data: {
+        userId: formData.get("id") as string,
+        categoryName: "30",
+        photo: "/Kuran/Cüz_30/601.jpg",
+      },
+    });
+    await prisma.home.create({
+      data: {
+        userId: formData.get("id") as string,
+        categoryName: "30",
+        photo: "/Kuran/Cüz_30/601.jpg",
+      },
+    });
+    await prisma.home.create({
+      data: {
+        userId: formData.get("id") as string,
+        categoryName: "30",
+        photo: "/Kuran/Cüz_30/601.jpg",
+      },
+    });
+    await prisma.home.create({
+      data: {
+        userId: formData.get("id") as string,
+        categoryName: "30",
+        photo: "/Kuran/Cüz_30/601.jpg",
+      },
+    });
+  }
+  redirect("/");
+}
+
+export async function selectGroupAction(value: string) {
+  console.log(`server action called with ${value}`);
 }
