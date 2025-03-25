@@ -2,7 +2,6 @@
 
 import { redirect } from "next/navigation";
 import prisma from "./lib/db";
-import { supabase } from "./lib/supabase";
 import { revalidatePath } from "next/cache";
 
 export async function createAirbnbHome({ userId }: { userId: string }) {
@@ -78,29 +77,6 @@ export async function CreateDescription(formData: FormData) {
   const guestNumber = formData.get("guest") as string;
   const roomNumber = formData.get("room") as string;
   const bathroomsNumber = formData.get("bathroom") as string;
-
-  const { data: imageData } = await supabase.storage
-    .from("images")
-    .upload(`${imageFile.name}-${new Date()}`, imageFile, {
-      cacheControl: "2592000",
-      contentType: "image/png",
-    });
-
-  const data = await prisma.home.update({
-    where: {
-      id: homeId,
-    },
-    data: {
-      title: title,
-      description: description,
-      price: Number(price),
-      bedrooms: roomNumber,
-      bathrooms: bathroomsNumber,
-      guests: guestNumber,
-      photo: imageData?.path,
-      addedDescription: true,
-    },
-  });
 
   return redirect(`/create/${homeId}/address`);
 }
